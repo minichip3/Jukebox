@@ -383,7 +383,7 @@ class Node:
         if not URL_REGEX.match(query) and not re.match(r"(?:ytm?|sp|sc|am)search:.", query):
             query = f"{search_type}:{query}"
 
-        elif DISCORD_MP3_URL_REGEX.match(query):
+        if DISCORD_MP3_URL_REGEX.match(query):
             async with self._session.get(
                 url=f"{self._rest_uri}/" + NODE_VERSION + f"/loadtracks?identifier={quote(query)}",
                 headers={"Authorization": self._password}

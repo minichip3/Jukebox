@@ -1,9 +1,8 @@
-<a href="https://discord.gg/wRCgB7vBQv">
-    <img src="https://img.shields.io/discord/811542332678996008?color=7289DA&label=Support&logo=discord&style=for-the-badge" alt="Discord">
-</a>
-
-# Vocard Bot
+# 주크박스봇
+주크박스 봇은 Vocard를 포크하여 만든 음악봇입니다.
 Vocard is a highly customizable Discord music bot, designed to deliver a user-friendly experience. It offers support for a wide range of streaming platforms including Youtube, Soundcloud, Spotify, Twitch, and more.
+
+[개발용Discord서버](https://discord.gg/KGEUsHvrTF)
 
 ## Features
 * Fast song loading

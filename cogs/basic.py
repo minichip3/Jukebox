@@ -850,7 +850,7 @@ class Basic(commands.Cog):
     @app_commands.autocomplete(category=help_autocomplete)
     @commands.dynamic_cooldown(cooldown_check, commands.BucketType.guild)
     async def help(self, ctx: commands.Context, category: str = "News") -> None:
-        "Lists all the commands in Vocard."
+        "Lists all the commands in Jukebox."
         if category not in self.bot.cogs:
             category = "News"
         view = HelpView(self.bot, ctx.author)
@@ -869,7 +869,7 @@ class Basic(commands.Cog):
         embed.add_field(
             name=value[0],
             value=value[1].format(
-                "0", "0", self.bot.latency, '😭' if self.bot.latency > 5 else ('😨' if self.bot.latency > 1 else '👌'), "St Louis, MO, United States"
+                "0", "0", self.bot.latency, '😭' if self.bot.latency > 5 else ('😨' if self.bot.latency > 1 else '👌'), "Gwangju, South Korea"
         ))
 
         if player:

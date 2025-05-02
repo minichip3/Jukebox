@@ -146,7 +146,7 @@ class Settings(commands.Cog, name="settings"):
         dj_role = ctx.guild.get_role(settings.get('dj', 0))
         embed.add_field(name=texts[1], value=texts[2].format(
             settings.get('prefix', func.settings.bot_prefix) or 'None',
-            settings.get('lang', 'EN'),
+            settings.get('lang', 'KO'),
             settings.get('controller', True),
             dj_role.name if dj_role else 'None',
             settings.get('votedisable', False),

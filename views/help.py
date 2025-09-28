@@ -56,10 +56,10 @@ class HelpView(discord.ui.View):
         self.response: discord.Message = None
         self.categories: list[str] = [ name.capitalize() for name, cog in bot.cogs.items() if len([c for c in cog.walk_commands()]) ]
 
-        self.add_item(discord.ui.Button(label='Website', emoji='🌎', url='https://vocard.xyz'))
+        self.add_item(discord.ui.Button(label='Website', emoji='🌎', url='https://jukebox.minichip.net/'))
         self.add_item(discord.ui.Button(label='Document', emoji=':support:915152950471581696', url='https://docs.vocard.xyz'))
-        self.add_item(discord.ui.Button(label='Github', emoji=':github:1098265017268322406', url='https://github.com/ChocoMeow/Vocard'))
-        self.add_item(discord.ui.Button(label='Donate', emoji=':patreon:913397909024800878', url='https://www.patreon.com/Vocard'))
+        self.add_item(discord.ui.Button(label='Github', emoji=':github:1098265017268322406', url='https://github.com/minichip3/Jukebox'))
+        self.add_item(discord.ui.Button(label='Donate', emoji=':patreon:913397909024800878', url='https://qr.kakaopay.com/Ej8DQ8gp7'))
         self.add_item(HelpDropdown(self.categories))
     
     async def on_error(self, error, item, interaction) -> None:
@@ -80,16 +80,16 @@ class HelpView(discord.ui.View):
     def build_embed(self, category: str) -> discord.Embed:
         category = category.lower()
         if category == "news":
-            embed = discord.Embed(title="Vocard Help Menu", url="https://discord.com/channels/811542332678996008/811909963718459392/1069971173116481636", color=func.settings.embed_color)
+            embed = discord.Embed(title="Vocard Help Menu", url="https://discord.com/channels/1357060405184172083/1357069384400633966/1357069643575066798", color=func.settings.embed_color)
             embed.add_field(
                 name=f"Available Categories: [{2 + len(self.categories)}]",
                 value="```py\n👉 News\n2. Tutorial\n{}```".format("".join(f"{i}. {c}\n" for i, c in enumerate(self.categories, start=3))),
                 inline=True
             )
 
-            update = "Vocard is a simple music bot. It leads to a comfortable experience which is user-friendly, It supports YouTube, Soundcloud, Spotify, Twitch and more!"
+            update = "주크박스는 간단한 음악 봇입니다. 사용자 친화적이고 사용하기 편합니다, 유튜브, 사운드클라우드, 스포티파이, 애플뮤직 등을 지원합니다!"
             embed.add_field(name="📰 Information:", value=update, inline=True)
-            embed.add_field(name="Get Started", value="```Join a voice channel and /play {Song/URL} a song. (Names, Youtube Video Links or Playlist links or Spotify links are supported on Vocard)```", inline=False)
+            embed.add_field(name="사용법", value="```음성채팅에 들어온 후 /play {곡/URL} 를 입력하세요. (제목, 유튜브 비디오 링크 or 재생목록 링크 or 스포티파이 링크, 애플뮤직 링크를 지원합니다.)```", inline=False)
             
             return embed
 

@@ -280,7 +280,7 @@ class Settings(commands.Cog, name="settings"):
                         manage_messages=True
                     )
                 }
-                channel = await ctx.guild.create_text_channel("vocard-song-requests", overwrites=overwrites)
+                channel = await ctx.guild.create_text_channel("노래신청-주크박스", overwrites=overwrites)
             except:
                 return await send(ctx, "noCreatePermission")
 

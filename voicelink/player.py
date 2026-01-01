@@ -459,7 +459,11 @@ class Player(VoiceProtocol):
                             self.controller = await channel.fetch_message(request_channel_data.get("controller_msg_id"))
                             await self.controller.edit(embed=embed, view=view)
                         except errors.NotFound:
-                            self.controller = None
+                            self.controller = await channel.send(embed=embed, view=view)
+                            await func.update_settings(self.channel.guild.id, {"$set": {'music_request_channel': {
+                                "text_channel_id": self.controller.channel.id,
+                                "controller_msg_id": self.controller.id,
+                            }}})
                 
                 # Send a new controller message if none exists
                 if not self.controller:
